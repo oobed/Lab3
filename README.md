@@ -1,42 +1,31 @@
-# Lab 3: K Nearest Neighbors
+# CSCI360 Lab3
 
-**CSCI 360: Introduction to Artificial Intelligence**
-
-## Introduction
-In this lab you will be implementing the k Nearest Neighbors. The
-algorithm uses a distance function and a training set, By using the
-distance metrics to look up $k$ closest points to an example, we can
-average or "vote" on the label that is predicted.
-
-In this lab you will be implementing the algorithm, but first you will
-have to clean the data. The data is found in the [`data.npy`](./data.npy).
-
-All the code you write should be in [`lab3.py`](./lab3.py) and you will be
-under functions `preprocess_data` and `k_nearest_neighbors`. It is
-important you don't change the parameters. You are provided with a
-utility file and a test file. The utility file has functions provided
-that will compute the `edit_distance`, `accuracy_score`, and `load_data`.
-
-It also contains the names of the features in the dataset in the order that they appear in the columns.
-
-You are allowed to use `numpy` which is outlined by [`requirements.txt`](./requirements.txt)
-
-## Utility file:
-### `edit_distance(u, v, l)`
-
-Edit distance can take 2 arrays and a parameter `l`.
-
-`l` can be -1, any real positive number or `numpy.inf`
-
+## Installation
+In addition to lab 1 or 2 installed libraries, we use `pandas`, `matplotlib` and `sklearn` in lab 3. If you want to create a brand new environment for lab 3, use commands:
 ```
->>> from lab3_utils import edit_distance
->>> edit_distance([1, 2, 3], [1, 2, 3], 1) == 0
-True
+conda create -n csci360_lab3 python=3.8
+conda activate csci360_lab3
+pip install -r requirements.txt
+```
+Or, you can install new libraries to previous environment with commands:
+```
+conda activate [PREVIOUS_ENV_NAME]
+pip install -U scikit-learn
+pip install pandas
+pip install matplotlib
 ```
 
+## Instructions
+- Both main part and extra credit of Lab 3 are in `main.ipynb`. You should have Jupyter Notebook installed back to Lab 0. If not, please run command in your current environment `conda install -c anaconda jupyter`.
+- We provide skeleton code in `main.ipynb`. You are required to fill blanks in between `# ===== XXX ===== #` and `# ===== End of XXX ===== #`. If the next block starts with `# TEST ...`, your program should pass all assertions.
+- For problem 1 (c-e), you need to find optimal k (and p), make sure you fill in `{}` in pre-defined comment blocks.
 
+## FAQ
+### Rules of helper function/class
+Write inside `# ===== XXX ===== #` blocks where you will use. When grading, we will call each block once from top. If we encounter an error because you place functions in a later block, we are not going to give points back during regrading (even major point deduction due to syntax error). Note that some compiled functions are saved in memory temporarily so you never get error if you once called the block later.
 
-## Test File:
-The test file can be run it will try to use the `preprocess_data` and `k_nearest_neighbors` as they are outline in the lab3 PDF.
+### Can/should we report optimal k (and p) in README?
+We will check `main.ipynb` and find the numbers there. It does not matter whether you report these numbers again in anywhere else. It is ineligible to require regrading if you misplaced these numbers.
 
-The test file uses `load_data` this pulls a tuple from the data
+### How we will grade
+Please check instruction PDF for point assignment. We will not disclose further detailed rubrics.
