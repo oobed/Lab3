@@ -1,5 +1,5 @@
 # CSCI360 Lab3
-
+# USE 2 LATE DAYS
 ## Installation
 In addition to lab 1 or 2 installed libraries, we use `pandas`, `matplotlib` and `sklearn` in lab 3. If you want to create a brand new environment for lab 3, use commands:
 ```
